@@ -1,0 +1,29 @@
+{
+  "name": "stripe-payments-demo",
+  "version": "0.0.0",
+  "description": "",
+  "author": "steve <steven@stdlib.com>",
+  "main": "functions/__main__.js",
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "dotenv": "^4.0.0",
+    "ejs": "^2.5.7",
+    "express": "^4.15.2",
+    "morgan": "^1.8.1",
+    "stripe": "^4.18.0"
+  },
+  "private": true,
+  "stdlib": {
+    "build": "faaslang",
+    "name": "steve/stripe-payments-demo",
+    "timeout": 10000,
+    "publish": true,
+    "personalize": {
+      "keys": [],
+      "user": []
+    }
+  },
+  "devDependencies": {
+    "standard": "^10.0.3"
+  }
+}
