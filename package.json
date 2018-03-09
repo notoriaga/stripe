@@ -18,6 +18,7 @@
     "name": "steve/stripe-payments-demo",
     "timeout": 10000,
     "publish": true,
+    "engine": "nodejs-test",
     "personalize": {
       "keys": [],
       "user": []

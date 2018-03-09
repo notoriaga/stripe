@@ -258,7 +258,7 @@
       }
 
       // Create a Stripe source with the common data and extra information.
-      const {source} = await stripe.createSource(sourceData)
+      const { source } = await stripe.createSource(sourceData)
       await handleOrder(order, source)
     }
   })

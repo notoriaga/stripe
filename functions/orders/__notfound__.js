@@ -10,15 +10,17 @@ const { orders } = require('../../src/orders')
  * @returns {object}
  */
 module.exports = async (type, livemode, status, id, context) => {
-  let orderID = context.path[1]
-  let source = JSON.parse(context.http.body)
+  console.log(context.http.body)
 
+  let orderID = context.path[1]
   let order = await orders.retrieve(orderID)
 
   let pay = context.path[2]
   if (!pay) {
     return order
   }
+
+  let source = JSON.parse(context.http.body)
 
   if (order.metadata.status === 'pending' || order.metadata.status === 'paid') {
     return {
