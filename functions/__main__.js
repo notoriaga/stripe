@@ -7,17 +7,17 @@ const templatePath = path.join(__dirname, '/../public/index.html')
 let app
 
 /**
- * Renders your Index page from ./public/index.ejs
+ * Renders your app from ./public/index.ejs
  * @returns {object.http}
  */
 module.exports = async context => {
-  let path = context.service.environment === 'local'
+  let servicePath = context.service.environment === 'local'
     ? `/${context.service.identifier}`
         .replace('.', '/')
-        .substr(0, context.service.identifier.indexOf('['))
+        .substr(0, context.service.identifier.indexOf('[') + 1)
     : ''
 
-  app = app || (await renderFile(templatePath, { path: path }))
+  app = app || (await renderFile(templatePath, { path: servicePath }))
 
   return {
     headers: {

@@ -9,7 +9,7 @@ const { orders } = require('../../src/orders')
  * @param {string} id
  * @returns {object}
  */
-module.exports = async (type, livemode, status, id, context) => {
+module.exports = async (type = null, livemode = null, status = null, id = null, context) => {
   console.log(context.http.body)
 
   let orderID = context.path[1]
@@ -68,6 +68,7 @@ module.exports = async (type, livemode, status, id, context) => {
       status = 'failed'
     }
     // Update the order with the charge status.
+    console.log(order)
     order = await orders.update(order.id, { metadata: { status } })
   }
 

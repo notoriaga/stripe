@@ -1,5 +1,5 @@
 const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY)
-const { orders } = require('../../src/orders')
+const { orders } = require('../src/orders')
 
 const WEBHOOK_SECRET = process.env.STRIPE_WEBHOOK_SECRET
 
