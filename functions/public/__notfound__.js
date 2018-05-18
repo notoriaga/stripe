@@ -18,7 +18,6 @@ module.exports = async (context) => {
   }
 
   let staticFilepath = path.join(...context.path.slice(1))
-
   if (!staticFiles[staticFilepath]) {
     return {
       headers: {
